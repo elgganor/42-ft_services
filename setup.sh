@@ -9,7 +9,13 @@ cp srcs/nginx/index_template.html srcs/nginx/index.html
 sed -i '' "s/MINIKUBE_IP/$IP/g" srcs/nginx/index.html
 
 docker build -t nginx srcs/nginx
+docker build -t wordpress srcs/wordpress
+
 kubectl apply -f srcs/nginx/nginx.yaml
 kubectl apply -f srcs/nginx/ingress.yaml
+kubectl apply -f srcs/wordpress/wordpress.yaml
 
 rm srcs/nginx/index.html
+
+sleep 2
+open http://$IP:80
