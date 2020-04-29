@@ -10,10 +10,12 @@ sed -i '' "s/MINIKUBE_IP/$IP/g" srcs/nginx/index.html
 
 docker build -t nginx srcs/nginx
 docker build -t wordpress srcs/wordpress
+docker build -t mysql srcs/mysql
 
 kubectl apply -f srcs/nginx/nginx.yaml
 kubectl apply -f srcs/nginx/ingress.yaml
 kubectl apply -f srcs/wordpress/wordpress.yaml
+kubectl apply -f srcs/mysql/mysql.yaml
 
 rm srcs/nginx/index.html
 
