@@ -27,5 +27,33 @@ spec:
       containers:
       - name: mysql
         image: mysql
+        imagePullPolicy: Never
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: root
+        - name: MYSQL_DATABASE
+          value: wordpress
+        - name: MYSQL_USER
+          value: admin
+        - name: MYSQL_PASS
+          value: admin
         ports:
         - containerPort: 3306
+        volumeMounts:
+          - mountPath: "/var/lib/mysql"
+            name: mysql-data
+      volumes:
+        - name: mysql-data
+          persistentVolumeClaim:
+              claimName: mysql-data-disk
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-data-disk
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

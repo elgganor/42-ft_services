@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: wordpress
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: wordpress
   ports:
@@ -28,5 +28,14 @@ spec:
       - name: wordpress
         image: wordpress
         imagePullPolicy: Never
+        env:
+        - name: DB_NAME
+          value: wordpress
+        - name: DB_USER
+          value: admin
+        - name: DB_PASSWORD
+          value: admin
+        - name: DB_HOST
+          value: mysql
         ports:
         - containerPort: 5050
