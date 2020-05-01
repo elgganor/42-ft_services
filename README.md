@@ -23,3 +23,4 @@ List of resources used for this project:
 * https://www.keycdn.com/blog/openssl-tutorial
 * https://docs.docker.com/engine/examples/running_ssh_service/
 * https://www.cyberciti.biz/faq/how-to-install-php-7-fpm-on-alpine-linux/
+* https://wiki.alpinelinux.org/wiki/Setting_up_a_ssh-server
