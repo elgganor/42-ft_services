@@ -45,15 +45,4 @@ spec:
       volumes:
         - name: mysql-data
           persistentVolumeClaim:
-              claimName: mysql-data-disk
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: mysql-data-disk
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 1Gi
+              claimName: mysql-pv-claim
