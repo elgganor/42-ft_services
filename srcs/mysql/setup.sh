@@ -22,4 +22,8 @@ EOF
 	rm -f tmp_file
 fi
 
+openrc
+touch /run/openrc/softlevel
+rc-update add telegraf
+
 exec /usr/bin/mysqld --defaults-file=/etc/mysql/my.cnf --user=root --console

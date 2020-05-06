@@ -5,4 +5,8 @@ mv ./wordpress /var/www/localhost
 rm -rf latest.tar.gz
 mv /tmp/wp-config.php /var/www/localhost/wordpress
 
+openrc
+touch /run/openrc/softlevel
+rc-update add telegraf
+
 php -S 0.0.0.0:5050 -t /var/www/localhost/wordpress

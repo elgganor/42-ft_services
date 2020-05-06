@@ -443,7 +443,9 @@ CREATE TABLE `wp_users` (
 --
 
 INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`) VALUES
-(1, 'admin', '$P$BKA0DIhVTnILJTVzXAuKjWMLTKJPmJ/', 'admin', 'mrouabeh@student.42.fr', 'http://localhost:8888', '2020-04-30 12:31:29', '', 0, 'admin');
+(1, 'admin', '$P$BKA0DIhVTnILJTVzXAuKjWMLTKJPmJ/', 'admin', 'mrouabeh@student.42.fr', 'http://localhost:5050', '2020-04-30 12:31:29', '', 0, 'admin'),
+(2, 'test', '$P$Bb/Oo5J1ZPUQCMwNLBvwPAUIYRI2h7.', 'test', 'test@student.42.fr', 'http://localhost:5050', '2020-04-30 12:31:29', '', 0, 'test test'),
+(3, 'user', '$P$B2DL56M7nkzZv32g0f5SdS3dJIwXnP/', 'user', 'user@student.42.fr', 'http://localhost:5050', '2020-04-30 12:31:29', '', 0, 'user user');
 
 --
 -- Indexes for dumped tables

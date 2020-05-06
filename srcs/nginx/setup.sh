@@ -11,5 +11,6 @@ echo "admin:admin" | chpasswd
 openrc
 touch /run/openrc/softlevel
 rc-update add sshd
+rc-update add telegraf
 /etc/init.d/sshd start
 nginx -g "daemon off;"
