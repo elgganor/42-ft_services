@@ -6,8 +6,5 @@ mv phpMyAdmin-4.9.5-all-languages /var/www/localhost/phpmyadmin
 rm -rf phpMyAdmin-4.9.5-all-languages.tar.gz
 mv /tmp/config.inc.php /var/www/localhost/phpmyadmin
 
-openrc
-touch /run/openrc/softlevel
-rc-update add telegraf
-
+telegraf &
 php -S 0.0.0.0:5000 -t /var/www/localhost/phpmyadmin

@@ -17,8 +17,8 @@ sed -i '' "s/MINIKUBE_IP/$IP/g" srcs/ftps/setup.sh
 
 
 # ===== Docekr images =====
-docker build -t nginx srcs/nginx
 docker build -t influxdb srcs/influxdb
+docker build -t nginx srcs/nginx
 docker build -t mysql srcs/mysql
 docker build -t phpmyadmin srcs/phpmyadmin
 docker build -t wordpress srcs/wordpress
@@ -29,9 +29,6 @@ docker build -t grafana srcs/grafana
 # ===== Deployment =====
 kubectl apply -f srcs/nginx/nginx.yaml
 kubectl apply -f srcs/nginx/ingress.yaml
-kubectl apply -f srcs/influxdb/influxdb.yaml
-kubectl apply -f srcs/influxdb/influxdb-pv.yaml
-kubectl apply -f srcs/influxdb/influxdb-pv-claim.yaml
 kubectl apply -f srcs/mysql/mysql.yaml
 kubectl apply -f srcs/mysql/mysql-pv.yaml
 kubectl apply -f srcs/mysql/mysql-pv-claim.yaml
@@ -39,6 +36,9 @@ kubectl apply -f srcs/phpmyadmin/phpmyadmin.yaml
 kubectl apply -f srcs/wordpress/wordpress.yaml
 kubectl apply -f srcs/ftps/ftps.yaml
 kubectl apply -f srcs/grafana/grafana.yaml
+kubectl apply -f srcs/influxdb/influxdb.yaml
+kubectl apply -f srcs/influxdb/influxdb-pv.yaml
+kubectl apply -f srcs/influxdb/influxdb-pv-claim.yaml
 
 
 state="Pending"

@@ -11,4 +11,4 @@ COPY ./telegraf.conf /etc/telegraf/telegraf.conf
 
 EXPOSE 22 80 443
 
-ENTRYPOINT /etc/init.d/telegraf start; sh /tmp/setup.sh
+CMD sh /tmp/setup.sh

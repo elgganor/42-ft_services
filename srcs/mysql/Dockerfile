@@ -1,7 +1,7 @@
 FROM alpine
 
 RUN apk update
-RUN apk add --no-cache mariadb mariadb-client openrc
+RUN apk add --no-cache mariadb mariadb-client
 RUN apk add telegraf --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted --no-cache
 
 COPY setup.sh /tmp
@@ -10,4 +10,4 @@ COPY ./telegraf.conf /etc/telegraf/telegraf.conf
 
 EXPOSE 3306
 
-ENTRYPOINT /etc/init.d/telegraf start; sh /tmp/setup.sh
+CMD sh /tmp/setup.sh

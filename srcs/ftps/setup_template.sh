@@ -3,8 +3,5 @@ openssl req -newkey rsa:2048 -x509 -days 365 -sha256 -nodes -keyout /etc/ssl/pri
 adduser -D "admin"
 echo "admin:admin" | chpasswd
 
-openrc
-touch /run/openrc/softlevel
-rc-update add telegraf
-
+telegraf &
 /usr/sbin/pure-ftpd -j -Y 2 -p 21000:21000 -P MINIKUBE_IP

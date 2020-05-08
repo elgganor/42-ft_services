@@ -1,5 +1,2 @@
-openrc
-touch /run/openrc/softlevel
-rc-update add telegraf
-
+telegraf &
 /grafana/bin/grafana-server
